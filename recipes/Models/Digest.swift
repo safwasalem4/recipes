@@ -38,7 +38,7 @@ class Digest: NSObject, Codable {
         total: Double,
         hasRDI: Bool ,
         daily: Double,
-        unit: String,
+        unit: String
     ) {
         self.label = label
         self.tag = tag

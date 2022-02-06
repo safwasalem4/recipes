@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Reciepe: NSObject, Codable {
+class Recipe: NSObject, Codable {
 
     enum CodingKeys: String, CodingKey {
             case uri
@@ -31,51 +31,73 @@ class Reciepe: NSObject, Codable {
             case digest
     }
 
+    enum ExpressionKeys: String {
+            case uri
+            case label
+            case image
+            case source
+            case url
+            case shareAs
+            case yield
+            case dietLabels
+            case healthLabels
+            case cautions
+            case ingredientLines
+            case ingredients
+            case calories
+            case totalWeight
+            case totalTime
+            case cuisineType
+            case mealType
+            case dishType
+            case digest
+    }
+    
     // MARK: - Properties
 
-        var uri: String
-        var label: String
-        var image: String
-        var source: String
-        var url: String
-        var shareAs: String
-        var yield : Double
-        var dietLabels : [String]
-        var healthLabels : [String]
-        var cautions : [String]
-        var ingredientLines : [String]
-        var ingredients : [Ingredient]
-        var calories : Double
-        var totalWeight : Double
-        var totalTime : Double
-        var cuisineType : [String]
-        var mealType : [String]
-        var dishType : [String]
-        var digest : [Digest]
+        var uri: String?
+        var label: String?
+        var image: String?
+        var source: String?
+        var url: String?
+        var shareAs: String?
+        var yield : Double?
+        var dietLabels : [String]?
+        var healthLabels : [String]?
+        var cautions : [String]?
+        var ingredientLines : [String]?
+        var ingredients : [Ingredient]?
+        var calories : Double?
+        var totalWeight : Double?
+        var totalTime : Double?
+        var cuisineType : [String]?
+        var mealType : [String]?
+        var dishType : [String]?
+        var digest : [Digest]?
 
 
     // MARK: - Initializers
 
     init(
-        uri: String,
-        label: String,
-        image: String,
-        source: String,
-        url: String,
-        shareAs: String,
-        yield : Double,
-        dietLabels : [String],
-        healthLabels : [String],
-        cautions : [String],
-        ingredientLines : [String],
-        ingredients : [Ingredient],
-        calories : Double,
-        totalWeight : Double,
-        totalTime : Double,
-        cuisineType : [String],
-        mealType : [String],
-        dishType : [String],
-        digest : [Digest]
+        uri: String?,
+        label: String?,
+        image: String?,
+        source: String?,
+        url: String?,
+        shareAs: String?,
+        yield : Double?,
+        dietLabels : [String]?,
+        healthLabels : [String]?,
+        cautions : [String]?,
+        ingredientLines : [String]?,
+        ingredients : [Ingredient]?,
+        calories : Double?,
+        totalWeight : Double?,
+        totalTime : Double?,
+        cuisineType : [String]?,
+        mealType : [String]?,
+        dishType : [String]?,
+        digest : [Digest]?
     ) {
         self.uri=uri
         self.label=label
