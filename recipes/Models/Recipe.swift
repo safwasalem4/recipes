@@ -32,39 +32,22 @@ class Recipe: NSObject, Codable {
     }
 
     enum ExpressionKeys: String {
-            case uri
             case label
-            case image
-            case source
-            case url
-            case shareAs
             case yield
-            case dietLabels
-            case healthLabels
-            case cautions
-            case ingredientLines
-            case ingredients
-            case calories
-            case totalWeight
-            case totalTime
-            case cuisineType
-            case mealType
-            case dishType
-            case digest
     }
     
-    enum RecipeType: String {
-            case lowSugar = "low-sugar"
-            case keto = "keto"
-            case vegan = "vegan"
-            case all = "all"
+    enum RecipeType: Int {
+            case all = 0
+            case lowSugar = 1
+            case keto = 2
+            case vegan = 3
         }
     
     
     class func recipeTypeName(forType: RecipeType) -> String {
             switch forType {
             case .lowSugar: return "lowSugar"
-            case .keto: return "keto"
+            case .keto: return "keto-friendly"
             case .vegan: return "vegan"
             case .all: return "All"
             }
