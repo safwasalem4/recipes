@@ -53,6 +53,23 @@ class Recipe: NSObject, Codable {
             case digest
     }
     
+    enum RecipeType: String {
+            case lowSugar = "low-sugar"
+            case keto = "keto"
+            case vegan = "vegan"
+            case all = "all"
+        }
+    
+    
+    class func recipeTypeName(forType: RecipeType) -> String {
+            switch forType {
+            case .lowSugar: return "lowSugar"
+            case .keto: return "keto"
+            case .vegan: return "vegan"
+            case .all: return "All"
+            }
+        }
+    
     // MARK: - Properties
 
         var uri: String?
