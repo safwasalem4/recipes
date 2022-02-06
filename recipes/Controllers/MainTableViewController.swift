@@ -8,14 +8,14 @@
 import UIKit
 import Alamofire
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController, UISearchControllerDelegate {
 
     let tableViewCellIdentifier = "cellID"
-    
+
     // MARK: - Properties
     
     var recipes = [Recipe]()
-    var searchController: UISearchController!    
+    var searchController: UISearchController!
     private var resultsTableController: ResultsTableController!
     var restoredState = SearchControllerRestorableState()
     
@@ -23,7 +23,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let nib = UINib(nibName: "TableCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: tableViewCellIdentifier)
         
@@ -35,9 +35,12 @@ class MainTableViewController: UITableViewController {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.delegate = self        
+        searchController.searchBar.delegate = self
         searchController.searchBar.scopeButtonTitles = [Recipe.recipeTypeName(forType: .all),Recipe.recipeTypeName(forType: .lowSugar), Recipe.recipeTypeName(forType: .keto), Recipe.recipeTypeName(forType: .vegan)]
 
+
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search..."
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
@@ -46,7 +49,7 @@ class MainTableViewController: UITableViewController {
         setupDataSource()
 //        fetchRecipes(searchString: "vegan")
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -136,7 +139,6 @@ extension MainTableViewController {
 // MARK: - UISearchBarDelegate
 
 extension MainTableViewController: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

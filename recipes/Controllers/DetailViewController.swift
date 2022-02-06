@@ -8,24 +8,6 @@
 import UIKit
 
 class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
-   
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(
-//            image: UIImage(named: "back"),
-//            style: .plain,
-//            target: self,
-//            action: #selector(popToPrevious)
-//        )
-//       
-//        }
-
-    // @objc private func popToPrevious() {
-    //     // our custom stuff
-    //     navigationController?.popViewController(animated: true)
-    // }
-    
     // Constants for state restoration.
     private static let restoreRecipe = "restoreRecipeKey"
     
@@ -36,8 +18,20 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredients: UILabel!    
     @IBAction func websiteButton(_ sender: Any) {
+        let url = NSURL(string: recipe.url ?? "https://www.softxperteg.com/")
+        UIApplication.shared.open(url! as URL)
     }
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.action, target: self, action: #selector(shareTapped))
+        }
     
+    @objc private func shareTapped() {
+        let url = NSURL(string: recipe.url ?? "https://www.softxperteg.com/")
+        UIApplication.shared.open(url! as URL)
+    }
     // MARK: - Initialization
 
     class func detailViewControllerForProduct(_ recipe: Recipe) -> UIViewController {
