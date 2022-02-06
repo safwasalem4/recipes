@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipies-->
+        <!--Recipies Search-->
         <scene sceneID="GLX-CW-Olx">
             <objects>
                 <tableViewController storyboardIdentifier="MainTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhk-XT-7Y6" customClass="MainTableViewController" customModule="recipes" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,11 +23,8 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Recipies" largeTitleDisplayMode="always" id="QtV-zS-XGW"/>
+                    <navigationItem key="navigationItem" title="Recipies Search" largeTitleDisplayMode="always" id="QtV-zS-XGW"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="recipeshTableView" destination="yMV-mj-UrD" id="FAQ-tO-4pf"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnt-ty-RNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
