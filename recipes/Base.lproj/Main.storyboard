@@ -97,13 +97,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nle-pt-EIB">
-                                                <rect key="frame" x="16" y="151" width="343" height="23"/>
+                                                <rect key="frame" x="16" y="167" width="343" height="23"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-6e-7av">
-                                                <rect key="frame" x="16" y="174" width="343" height="30.5"/>
+                                                <rect key="frame" x="16" y="190" width="343" height="30.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="ingredients">
                                                         <attributes>
@@ -132,7 +132,7 @@
                                             <constraint firstItem="nle-pt-EIB" firstAttribute="leading" secondItem="Xcg-Ri-AY1" secondAttribute="leading" constant="16" id="8ia-bv-MNu"/>
                                             <constraint firstAttribute="trailing" secondItem="QK0-6e-7av" secondAttribute="trailing" constant="16" id="BMz-82-Q9C"/>
                                             <constraint firstItem="XgG-In-apS" firstAttribute="top" secondItem="Xcg-Ri-AY1" secondAttribute="top" constant="16" id="Olr-H6-NDU"/>
-                                            <constraint firstItem="nle-pt-EIB" firstAttribute="top" secondItem="XgG-In-apS" secondAttribute="bottom" id="QOz-np-dbP"/>
+                                            <constraint firstItem="nle-pt-EIB" firstAttribute="top" secondItem="XgG-In-apS" secondAttribute="bottom" constant="16" id="QOz-np-dbP"/>
                                             <constraint firstItem="QK0-6e-7av" firstAttribute="leading" secondItem="Xcg-Ri-AY1" secondAttribute="leading" constant="16" id="bUT-db-d9c"/>
                                             <constraint firstItem="XgG-In-apS" firstAttribute="leading" secondItem="Xcg-Ri-AY1" secondAttribute="leading" constant="16" id="lJz-xG-AAM"/>
                                             <constraint firstAttribute="bottom" secondItem="zHg-mR-XPO" secondAttribute="bottom" constant="16" id="otV-S7-uko"/>
