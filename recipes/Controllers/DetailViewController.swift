@@ -6,8 +6,11 @@
 //
 
 import UIKit
+//import SafariServices
 
-class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
+class DetailViewController: UIViewController, UIGestureRecognizerDelegate
+//                                SFSafariViewControllerDelegate
+{
     // Constants for state restoration.
     private static let restoreRecipe = "restoreRecipeKey"
     
@@ -18,6 +21,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredients: UILabel!    
     @IBAction func websiteButton(_ sender: Any) {
+//        openSafariVC()
         let url = NSURL(string: recipe.url ?? "https://www.softxperteg.com/")
         UIApplication.shared.open(url! as URL)
     }
@@ -34,6 +38,22 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     // MARK: - Initialization
 
+    
+//
+//    func openSafariVC() {
+//        let url = NSURL(string: recipe.url ?? "https://www.softxperteg.com/")
+//        let safariVC = SFSafariViewController(url: url! as URL)
+//
+//        self.present(safariVC, animated: true, completion: nil)
+//
+//        safariVC.delegate = self
+//    }
+//
+//       func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+//           controller.dismiss(animated: true, completion: nil)
+//       }
+    
+    
     class func detailViewControllerForProduct(_ recipe: Recipe) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -81,23 +101,24 @@ extension UIImageView {
 // MARK: - UIStateRestoration
 
 extension DetailViewController {
-	
-	override func encodeRestorableState(with coder: NSCoder) {
-		super.encodeRestorableState(with: coder)
-		
-		// Encode the recipe.
-		coder.encode(recipe, forKey: DetailViewController.restoreRecipe)
-	}
-	
-	override func decodeRestorableState(with coder: NSCoder) {
-		super.decodeRestorableState(with: coder)
-		
-		// Restore the recipe.
-		if let decodedRecipe = coder.decodeObject(forKey: DetailViewController.restoreRecipe) as? Recipe {
-			recipe = decodedRecipe
-		} else {
-			fatalError("A recipe did not exist. In your app, handle this gracefully.")
-		}
-	}
-	
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        // Encode the recipe.
+        coder.encode(recipe, forKey: DetailViewController.restoreRecipe)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        // Restore the recipe.
+        if let decodedRecipe = coder.decodeObject(forKey: DetailViewController.restoreRecipe) as? Recipe {
+            recipe = decodedRecipe
+        } else {
+            fatalError("A recipe did not exist. In your app, handle this gracefully.")
+        }
+    }
+    
 }
+
